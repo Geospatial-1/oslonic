@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amatinyi Feeds - Quality Animal Feeds in Kenya</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a8c2a;
+            --secondary-color: #f8b400;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .title-font {
+            font-family: 'Roboto Slab', serif;
+            font-weight: 600;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .bg-primary-custom {
+            background-color: var(--primary-color);
+        }
+        
+        .text-primary-custom {
+            color: var(--primary-color);
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #3a6d20;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary-custom {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border: none;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary-custom:hover {
+            background-color: #e0a800;
+            color: var(--dark-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1549317661-bd32b8c2b6f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .price {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown-item:hover {
+            background-color: rgba(74, 140, 42, 0.1);
+        }
+        
+        .cart-item {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Dark mode styles */
+        body[data-bs-theme="dark"] {
+            background-color: #222;
+            color: #f8f9fa;
+        }
+        
+        body[data-bs-theme="dark"] .card,
+        body[data-bs-theme="dark"] .testimonial-card {
+            background-color: #333;
+            color: #f8f9fa;
+        }
+        
+        body[data-bs-theme="dark"] .dropdown-menu {
+            background-color: #333;
+        }
+        
+        body[data-bs-theme="dark"] .dropdown-item {
+            color: #f8f9fa;
+        }
+        
+        body[data-bs-theme="dark"] .dropdown-item:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-paw me-2"></i>Amatinyi Feeds
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button class="btn btn-primary-custom position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="themeToggle" class="btn btn-secondary-custom">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center">
+        <div class="container slide-up">
+            <h1 class="display-4 title-font mb-4">Premium Quality Animal Feeds</h1>
+            <p class="lead mb-5">Nourishing your livestock for optimal growth and productivity</p>
+            <a href="#products" class="btn btn-primary-custom btn-lg px-4 me-2">
+                <i class="fas fa-shopping-basket me-2"></i>Shop Now
+            </a>
+            <a href="#contact" class="btn btn-secondary-custom btn-lg px-4">
+                <i class="fas fa-phone-alt me-2"></i>Contact Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 text-center fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Our feeds are manufactured to the highest standards with premium ingredients for optimal nutrition.</p>
+                </div>
+                <div class="col-md-4 text-center fade-in" style="animation-delay: 0.2s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>We deliver to your farm or business within 24 hours for orders within Nairobi and 48 hours for upcountry.</p>
+                </div>
+                <div class="col-md-4 text-center fade-in" style="animation-delay: 0.4s;">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Affordable Prices</h3>
+                    <p>Competitive pricing without compromising on quality, helping you maximize your profits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="title-font">Our Products</h2>
+                <p class="lead">Browse our wide range of quality animal feeds</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Product 1: Starter -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Chicken Starter Feed">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicken Starter</h5>
+                            <p class="card-text">High-protein feed for chicks from day 1 to 4 weeks, promoting healthy growth and development.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="starterDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="starterDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="850" data-product="Chicken Starter (5kg)">5kg - KSh 850</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1600" data-product="Chicken Starter (10kg)">10kg - KSh 1,600</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="3750" data-product="Chicken Starter (25kg)">25kg - KSh 3,750</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="7000" data-product="Chicken Starter (50kg)">50kg - KSh 7,000</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="13500" data-product="Chicken Starter (100kg)">100kg - KSh 13,500</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2: Growers -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Chicken Growers Feed">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicken Growers</h5>
+                            <p class="card-text">Balanced feed for chickens from 4 to 8 weeks, supporting steady growth and feather development.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="growersDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="growersDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="800" data-product="Chicken Growers (5kg)">5kg - KSh 800</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1500" data-product="Chicken Growers (10kg)">10kg - KSh 1,500</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="3500" data-product="Chicken Growers (25kg)">25kg - KSh 3,500</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="6500" data-product="Chicken Growers (50kg)">50kg - KSh 6,500</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="12500" data-product="Chicken Growers (100kg)">100kg - KSh 12,500</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3: Layers -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1559561727-3276a1a8d8ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Layers Feed">
+                        <div class="card-body">
+                            <h5 class="card-title">Layers Mash/Pellets</h5>
+                            <p class="card-text">Specially formulated for egg-laying hens to maximize egg production and shell quality.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="layersDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="layersDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="750" data-product="Layers Mash (5kg)">5kg - KSh 750</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1400" data-product="Layers Mash (10kg)">10kg - KSh 1,400</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="3250" data-product="Layers Mash (25kg)">25kg - KSh 3,250</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="6000" data-product="Layers Mash (50kg)">50kg - KSh 6,000</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="11500" data-product="Layers Mash (100kg)">100kg - KSh 11,500</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4: Broilers -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Broilers Feed">
+                        <div class="card-body">
+                            <h5 class="card-title">Broilers Feed</h5>
+                            <p class="card-text">High-energy feed for broiler chickens to achieve rapid growth and excellent meat quality.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="broilersDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="broilersDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="820" data-product="Broilers Feed (5kg)">5kg - KSh 820</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1550" data-product="Broilers Feed (10kg)">10kg - KSh 1,550</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="3600" data-product="Broilers Feed (25kg)">25kg - KSh 3,600</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="6800" data-product="Broilers Feed (50kg)">50kg - KSh 6,800</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="13000" data-product="Broilers Feed (100kg)">100kg - KSh 13,000</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5: Kienyeji -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1604998103926-af24aae6b5a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Kienyeji Feed">
+                        <div class="card-body">
+                            <h5 class="card-title">Kienyeji Feed</h5>
+                            <p class="card-text">Traditional free-range chicken feed with natural ingredients for healthy indigenous poultry.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="kienyejiDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="kienyejiDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="780" data-product="Kienyeji Feed (5kg)">5kg - KSh 780</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1450" data-product="Kienyeji Feed (10kg)">10kg - KSh 1,450</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="3400" data-product="Kienyeji Feed (25kg)">25kg - KSh 3,400</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="6300" data-product="Kienyeji Feed (50kg)">50kg - KSh 6,300</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="12000" data-product="Kienyeji Feed (100kg)">100kg - KSh 12,000</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6: Dairy -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Dairy Meal">
+                        <div class="card-body">
+                            <h5 class="card-title">Dairy Meal</h5>
+                            <p class="card-text">High-energy feed for dairy cows to boost milk production and maintain animal health.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="dairyDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dairyDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="720" data-product="Dairy Meal (5kg)">5kg - KSh 720</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1350" data-product="Dairy Meal (10kg)">10kg - KSh 1,350</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="3100" data-product="Dairy Meal (25kg)">25kg - KSh 3,100</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="5800" data-product="Dairy Meal (50kg)">50kg - KSh 5,800</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="11000" data-product="Dairy Meal (100kg)">100kg - KSh 11,000</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7: Pig Grower -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1581952976147-5a2d15560349?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Pig Grower Feed">
+                        <div class="card-body">
+                            <h5 class="card-title">Pig Grower</h5>
+                            <p class="card-text">Balanced feed for growing pigs to ensure healthy development and optimal weight gain.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="pigDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="pigDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="880" data-product="Pig Grower (5kg)">5kg - KSh 880</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1650" data-product="Pig Grower (10kg)">10kg - KSh 1,650</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="3800" data-product="Pig Grower (25kg)">25kg - KSh 3,800</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="7200" data-product="Pig Grower (50kg)">50kg - KSh 7,200</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="13800" data-product="Pig Grower (100kg)">100kg - KSh 13,800</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8: Rabbit Feed -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Rabbit Feed">
+                        <div class="card-body">
+                            <h5 class="card-title">Rabbit Feed</h5>
+                            <p class="card-text">Specialized feed for rabbits with balanced nutrients for growth and reproduction.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="rabbitDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="rabbitDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="900" data-product="Rabbit Feed (5kg)">5kg - KSh 900</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1700" data-product="Rabbit Feed (10kg)">10kg - KSh 1,700</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="4000" data-product="Rabbit Feed (25kg)">25kg - KSh 4,000</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="7500" data-product="Rabbit Feed (50kg)">50kg - KSh 7,500</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="14500" data-product="Rabbit Feed (100kg)">100kg - KSh 14,500</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 9: Fish Feed -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1567968204575-68dcd9cf4687?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Fish Feed">
+                        <div class="card-body">
+                            <h5 class="card-title">Fish Feed</h5>
+                            <p class="card-text">Floating pellets for tilapia and catfish with high protein content for rapid growth.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="fishDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="fishDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="950" data-product="Fish Feed (5kg)">5kg - KSh 950</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1800" data-product="Fish Feed (10kg)">10kg - KSh 1,800</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="4200" data-product="Fish Feed (25kg)">25kg - KSh 4,200</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="8000" data-product="Fish Feed (50kg)">50kg - KSh 8,000</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="15500" data-product="Fish Feed (100kg)">100kg - KSh 15,500</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 10: Calf Starter -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card card h-100">
+                        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="product-img card-img-top" alt="Calf Starter">
+                        <div class="card-body">
+                            <h5 class="card-title">Calf Starter</h5>
+                            <p class="card-text">Highly digestible feed for young calves to promote rumen development and early weaning.</p>
+                            <div class="dropdown mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="calfDropdown" data-bs-toggle="dropdown">
+                                    Select Quantity
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="calfDropdown">
+                                    <li><a class="dropdown-item" href="#" data-price="920" data-product="Calf Starter (5kg)">5kg - KSh 920</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="1750" data-product="Calf Starter (10kg)">10kg - KSh 1,750</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="4100" data-product="Calf Starter (25kg)">25kg - KSh 4,100</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="7800" data-product="Calf Starter (50kg)">50kg - KSh 7,800</a></li>
+                                    <li><a class="dropdown-item" href="#" data-price="15000" data-product="Calf Starter (100kg)">100kg - KSh 15,000</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="title-font mb-4">About Amatinyi Feeds</h2>
+                    <p class="lead">Your trusted partner in animal nutrition</p>
+                    <p>Amatinyi Feeds is a leading manufacturer and supplier of high-quality animal feeds in Kenya. Established in 2010, we have grown to become a household name among poultry and livestock farmers across the country.</p>
+                    <p>Our feeds are formulated by animal nutrition experts using premium ingredients to ensure your animals receive balanced nutrition for optimal growth, health, and productivity.</p>
+                    <p>We are committed to supporting Kenyan farmers with quality products, expert advice, and reliable delivery services.</p>
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-primary-custom me-2">Contact Us</a>
+                        <a href="#testimonials" class="btn btn-outline-secondary">See Testimonials</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner rounded shadow">
+                            <div class="carousel-item active">
+                                <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Farm">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1581952976147-5a2d15560349?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Pigs">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1567968204575-68dcd9cf4687?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Fish">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="title-font">What Our Customers Say</h2>
+                <p class="lead">Hear from farmers who trust Amatinyi Feeds</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" class="testimonial-img me-3" alt="Customer">
+                            <div>
+                                <h5 class="mb-0">Jane Muthoni</h5>
+                                <small class="text-muted">Poultry Farmer, Kiambu</small>
+                            </div>
+                        </div>
+                        <p>"Since switching to Amatinyi Layers Mash, my egg production has increased by 30%. The quality is consistent and my hens are healthier."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img me-3" alt="Customer">
+                            <div>
+                                <h5 class="mb-0">Peter Kamau</h5>
+                                <small class="text-muted">Dairy Farmer, Nakuru</small>
+                            </div>
+                        </div>
+                        <p>"Amatinyi Dairy Meal has transformed my farm. My cows produce more milk and maintain good body condition even during dry seasons."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="testimonial-img me-3" alt="Customer">
+                            <div>
+                                <h5 class="mb-0">Grace Wanjiku</h5>
+                                <small class="text-muted">Fish Farmer, Nyeri</small>
+                            </div>
+                        </div>
+                        <p>"The floating fish pellets from Amatinyi have improved my tilapia growth rate significantly. Feed conversion ratio is excellent!"</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="title-font mb-4">Contact Us</h2>
+                    <p class="lead">Get in touch for inquiries or orders</p>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-map-marker-alt text-primary-custom me-2"></i> Location</h5>
+                        <p>123 Feeds Avenue, Industrial Area, Nairobi, Kenya</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-phone-alt text-primary-custom me-2"></i> Phone</h5>
+                        <p>+254 700 123456 (Sales)<br>+254 711 987654 (Support)</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-envelope text-primary-custom me-2"></i> Email</h5>
+                        <p>sales@amatinyifeeds.co.ke<br>support@amatinyifeeds.co.ke</p>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5><i class="fas fa-clock text-primary-custom me-2"></i> Working Hours</h5>
+                        <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Send us a message</h4>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary-custom">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary-custom text-white">
+        <div class="container text-center">
+            <h2 class="title-font mb-3">Subscribe to Our Newsletter</h2>
+            <p class="lead mb-4">Get farming tips, special offers, and product updates directly to your inbox</p>
+            <form class="row g-2 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <input type="email" class="form-control form-control-lg" placeholder="Your email address">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-secondary-custom btn-lg w-100">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Amatinyi Feeds. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3">Terms of Service</a>
+                    <a href="#" class="text-white me-3">Privacy Policy</a>
+                    <a href="#" class="text-white">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Your Shopping Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="cartItems" class="mb-3">
+                <!-- Cart items will be added here dynamically -->
+                <p class="text-muted">Your cart is empty</p>
+            </div>
+            <div class="border-top pt-3">
+                <div class="d-flex justify-content-between mb-3">
+                    <h6>Subtotal:</h6>
+                    <h6 id="cartSubtotal">KSh 0</h6>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <h6>Delivery:</h6>
+                    <h6 id="cartDelivery">KSh 0</h6>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <h5>Total:</h5>
+                    <h5 id="cartTotal">KSh 0</h5>
+                </div>
+                <button class="btn btn-primary-custom w-100 mb-2" disabled id="checkoutBtn">Proceed to Checkout</button>
+                <button class="btn btn-outline-secondary w-100" data-bs-dismiss="offcanvas">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Dark/Light mode toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-bs-theme') === 'dark') {
+                body.setAttribute('data-bs-theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                body.setAttribute('data-bs-theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        });
+        
+        // Cart functionality
+        let cart = [];
+        
+        // Initialize dropdown functionality
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdown = this.closest('.dropdown');
+                const button = dropdown.querySelector('.dropdown-toggle');
+                const addToCartBtn = dropdown.nextElementSibling;
+                
+                // Update dropdown button text
+                button.textContent = this.textContent;
+                
+                // Enable add to cart button
+                addToCartBtn.disabled = false;
+                
+                // Store selected product data on the button
+                addToCartBtn.dataset.product = this.dataset.product;
+                addToCartBtn.dataset.price = this.dataset.price;
+            });
+        });
+        
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const product = this.dataset.product;
+                const price = parseInt(this.dataset.price);
+                
+                // Add item to cart
+                cart.push({ product, price });
+                
+                // Update cart count
+                document.getElementById('cartCount').textContent = cart.length;
+                
+                // Update cart UI
+                updateCart();
+                
+                // Show success message
+                alert(`${product} has been added to your cart!`);
+            });
+        });
+        
+        // Update cart function
+        function updateCart() {
+            const cartItemsEl = document.getElementById('cartItems');
+            const cartSubtotalEl = document.getElementById('cartSubtotal');
+            const cartDeliveryEl = document.getElementById('cartDelivery');
+            const cartTotalEl = document.getElementById('cartTotal');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = '<p class="text-muted">Your cart is empty</p>';
+                cartSubtotalEl.textContent = 'KSh 0';
+                cartDeliveryEl.textContent = 'KSh 0';
+                cartTotalEl.textContent = 'KSh 0';
+                checkoutBtn.disabled = true;
+                return;
+            }
+            
+            // Calculate subtotal
+            const subtotal = cart.reduce((sum, item) => sum + item.price, 0);
+            
+            // Calculate delivery (free for orders over 5000, otherwise 500)
+            const delivery = subtotal > 5000 ? 0 : 500;
+            
+            // Calculate total
+            const total = subtotal + delivery;
+            
+            // Update cart items list
+            cartItemsEl.innerHTML = '';
+            cart.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.className = 'cart-item';
+                itemEl.innerHTML = `
+                    <div class="d-flex justify-content-between">
+                        <div>${item.product}</div>
+                        <div>KSh ${item.price.toLocaleString()}</div>
+                    </div>
+                `;
+                cartItemsEl.appendChild(itemEl);
+            });
+            
+            // Update totals
+            cartSubtotalEl.textContent = `KSh ${subtotal.toLocaleString()}`;
+            cartDeliveryEl.textContent = `KSh ${delivery.toLocaleString()}`;
+            cartTotalEl.textContent = `KSh ${total.toLocaleString()}`;
+            checkoutBtn.disabled = false;
+        }
+        
+        // Checkout button functionality
+        document.getElementById('checkoutBtn').addEventListener('click', function() {
+            alert('Checkout functionality would be implemented here with payment gateway integration in a real application.');
+        });
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.fade-in, .slide-up');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        // Run once on page load
+        animateOnScroll();
+        
+        // Run on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
