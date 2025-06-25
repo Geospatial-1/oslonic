@@ -291,34 +291,326 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="title-font">Our Products</h2>
-                <p class="lead">Browse our wide range of quality animal feeds</p>
+   <!-- Products Section -->
+<section id="products" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="title-font">Our Products</h2>
+            <p class="lead">Browse our wide range of quality animal feeds and products</p>
+        </div>
+        
+        <!-- Chicken Feeds Category -->
+        <div class="category-card card mb-4">
+            <div class="card-header bg-primary-custom text-white" data-bs-toggle="collapse" href="#chickenFeeds" role="button">
+                <h3 class="mb-0 d-flex justify-content-between align-items-center">
+                    <span><i class="fas fa-egg me-2"></i> Chicken Feeds</span>
+                    <i class="fas fa-chevron-down"></i>
+                </h3>
             </div>
-            
-            <div class="row g-4">
-                <!-- Product 1: Starter -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="product-card card h-100">
-                        <img src="Kienyeji1.jpeg">
-                        <div class="card-body">
-                            <h5 class="card-title">Chicken Starter</h5>
-                            <p class="card-text">High-protein feed for chicks from day 1 to 4 weeks, promoting healthy growth and development.</p>
-                            <div class="dropdown mb-3">
-                                <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" id="starterDropdown" data-bs-toggle="dropdown">
-                                    Select Quantity
-                                </button>
-                                <ul class="dropdown-menu w-100" aria-labelledby="starterDropdown">
-                                    <li><a class="dropdown-item" href="#" data-price="850" data-product="Chicken Starter (5kg)">5kg - KSh 850</a></li>
-                                    <li><a class="dropdown-item" href="#" data-price="1600" data-product="Chicken Starter (10kg)">10kg - KSh 1,600</a></li>
-                                    <li><a class="dropdown-item" href="#" data-price="3750" data-product="Chicken Starter (25kg)">25kg - KSh 3,750</a></li>
-                                    <li><a class="dropdown-item" href="#" data-price="7000" data-product="Chicken Starter (50kg)">50kg - KSh 7,000</a></li>
-                                    <li><a class="dropdown-item" href="#" data-price="13500" data-product="Chicken Starter (100kg)">100kg - KSh 13,500</a></li>
-                                </ul>
+            <div class="collapse show" id="chickenFeeds">
+                <div class="card-body">
+                    <div class="row g-4">
+                        <!-- Chick Mash -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="Kienyeji1.jpeg" class="product-img card-img-top" alt="Chick Mash">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chick Mash</h5>
+                                    <p class="card-text">High-protein feed for chicks from day 1 to 4 weeks, promoting healthy growth.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Quantity
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="850" data-product="Chick Mash (5kg)">5kg - KSh 850</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="1600" data-product="Chick Mash (10kg)">10kg - KSh 1,600</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="3750" data-product="Chick Mash (25kg)">25kg - KSh 3,750</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
                             </div>
+                        </div>
+                        
+                        <!-- Growers Mash -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="slide3.jpeg" class="product-img card-img-top" alt="Growers Mash">
+                                <div class="card-body">
+                                    <h5 class="card-title">Growers Mash</h5>
+                                    <p class="card-text">Balanced feed for chickens from 4 to 8 weeks, supporting steady growth.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Quantity
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="800" data-product="Growers Mash (5kg)">5kg - KSh 800</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="1500" data-product="Growers Mash (10kg)">10kg - KSh 1,500</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="3500" data-product="Growers Mash (25kg)">25kg - KSh 3,500</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Layers Mash -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="layers.jpeg" class="product-img card-img-top" alt="Layers Mash">
+                                <div class="card-body">
+                                    <h5 class="card-title">Layers Mash</h5>
+                                    <p class="card-text">Specially formulated for egg-laying hens to maximize production.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Quantity
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="750" data-product="Layers Mash (5kg)">5kg - KSh 750</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="1400" data-product="Layers Mash (10kg)">10kg - KSh 1,400</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="3250" data-product="Layers Mash (25kg)">25kg - KSh 3,250</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dairy Meals Category -->
+        <div class="category-card card mb-4">
+            <div class="card-header bg-primary-custom text-white" data-bs-toggle="collapse" href="#dairyMeals" role="button">
+                <h3 class="mb-0 d-flex justify-content-between align-items-center">
+                    <span><i class="fas fa-cow me-2"></i> Dairy Meals</span>
+                    <i class="fas fa-chevron-down"></i>
+                </h3>
+            </div>
+            <div class="collapse" id="dairyMeals">
+                <div class="card-body">
+                    <div class="row g-4">
+                        <!-- Calf Starter -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="calf.jpeg" class="product-img card-img-top" alt="Calf Starter">
+                                <div class="card-body">
+                                    <h5 class="card-title">Calf Starter</h5>
+                                    <p class="card-text">Highly digestible feed for young calves to promote rumen development.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Quantity
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="920" data-product="Calf Starter (5kg)">5kg - KSh 920</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="1750" data-product="Calf Starter (10kg)">10kg - KSh 1,750</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="4100" data-product="Calf Starter (25kg)">25kg - KSh 4,100</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dairy Meal -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="slide4.jpeg" class="product-img card-img-top" alt="Dairy Meal">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dairy Meal</h5>
+                                    <p class="card-text">High-energy feed for dairy cows to boost milk production.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Quantity
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="720" data-product="Dairy Meal (5kg)">5kg - KSh 720</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="1350" data-product="Dairy Meal (10kg)">10kg - KSh 1,350</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="3100" data-product="Dairy Meal (25kg)">25kg - KSh 3,100</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Beef Meal -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="https://via.placeholder.com/300x200?text=Beef+Meal" class="product-img card-img-top" alt="Beef Meal">
+                                <div class="card-body">
+                                    <h5 class="card-title">Beef Meal</h5>
+                                    <p class="card-text">Nutrient-rich feed for beef cattle to support rapid growth.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Quantity
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="780" data-product="Beef Meal (5kg)">5kg - KSh 780</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="1450" data-product="Beef Meal (10kg)">10kg - KSh 1,450</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="3400" data-product="Beef Meal (25kg)">25kg - KSh 3,400</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Fodder Planting Materials -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="https://via.placeholder.com/300x200?text=Fodder+Materials" class="product-img card-img-top" alt="Fodder Planting Materials">
+                                <div class="card-body">
+                                    <h5 class="card-title">Fodder Planting Materials</h5>
+                                    <p class="card-text">High-quality seeds and materials for nutritious animal fodder.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Package
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="500" data-product="Fodder Seeds (Small)">Small Package - KSh 500</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="950" data-product="Fodder Seeds (Medium)">Medium Package - KSh 950</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="1800" data-product="Fodder Seeds (Large)">Large Package - KSh 1,800</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Chicks Category -->
+        <div class="category-card card mb-4">
+            <div class="card-header bg-primary-custom text-white" data-bs-toggle="collapse" href="#chicks" role="button">
+                <h3 class="mb-0 d-flex justify-content-between align-items-center">
+                    <span><i class="fas fa-kiwi-bird me-2"></i> Chicks</span>
+                    <i class="fas fa-chevron-down"></i>
+                </h3>
+            </div>
+            <div class="collapse" id="chicks">
+                <div class="card-body">
+                    <div class="row g-4">
+                        <!-- Kenbrow -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="https://via.placeholder.com/300x200?text=Kenbrow" class="product-img card-img-top" alt="Kenbrow Chicks">
+                                <div class="card-body">
+                                    <h5 class="card-title">Kenbrow Chicks</h5>
+                                    <p class="card-text">High-quality dual-purpose breed known for good egg and meat production.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Age
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="115" data-product="Kenbrow (1 day old)">1 day old - KSh 115</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="270" data-product="Kenbrow (4 months)">4 months - KSh 270</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sasso -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="https://via.placeholder.com/300x200?text=Sasso" class="product-img card-img-top" alt="Sasso Chicks">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sasso Chicks</h5>
+                                    <p class="card-text">Colorful, hardy birds with excellent meat quality and good egg production.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Age
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="115" data-product="Sasso (1 day old)">1 day old - KSh 115</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="270" data-product="Sasso (4 months)">4 months - KSh 270</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Rainbow -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="https://via.placeholder.com/300x200?text=Rainbow" class="product-img card-img-top" alt="Rainbow Chicks">
+                                <div class="card-body">
+                                    <h5 class="card-title">Rainbow Chicks</h5>
+                                    <p class="card-text">Vibrant colored birds with good egg production and disease resistance.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Age
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="115" data-product="Rainbow (1 day old)">1 day old - KSh 115</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="270" data-product="Rainbow (4 months)">4 months - KSh 270</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Improved Kienyeji -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="kienyeji.jpeg" class="product-img card-img-top" alt="Improved Kienyeji Chicks">
+                                <div class="card-body">
+                                    <h5 class="card-title">Improved Kienyeji</h5>
+                                    <p class="card-text">Local breed improved for better productivity while maintaining hardiness.</p>
+                                    <div class="dropdown mb-3">
+                                        <button class="btn btn-outline-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown">
+                                            Select Age
+                                        </button>
+                                        <ul class="dropdown-menu w-100">
+                                            <li><a class="dropdown-item" href="#" data-price="115" data-product="Improved Kienyeji (1 day old)">1 day old - KSh 115</a></li>
+                                            <li><a class="dropdown-item" href="#" data-price="270" data-product="Improved Kienyeji (4 months)">4 months - KSh 270</a></li>
+                                        </ul>
+                                    </div>
+                                    <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Eggs Category -->
+        <div class="category-card card mb-4">
+            <div class="card-header bg-primary-custom text-white" data-bs-toggle="collapse" href="#eggs" role="button">
+                <h3 class="mb-0 d-flex justify-content-between align-items-center">
+                    <span><i class="fas fa-egg me-2"></i> Eggs</span>
+                    <i class="fas fa-chevron-down"></i>
+                </h3>
+            </div>
+            <div class="collapse" id="eggs">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="product-card card h-100">
+                                <img src="https://via.placeholder.com/300x200?text=Egg+Tray" class="product-img card-img-top" alt="Egg Tray">
+                                <div class="card-body">
+                                    <h5 class="card-title">Egg Tray</h5>
+                                    <p class="card-text">Fresh, high-quality eggs from our free-range hens. Each tray contains 30 eggs.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="price">KSh 400 per tray</div>
+                                        <button class="btn btn-primary-custom add-to-cart" data-product="Egg Tray" data-price="400">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
                             <button class="btn btn-primary-custom w-100 add-to-cart" disabled>Add to Cart</button>
                         </div>
                     </div>
